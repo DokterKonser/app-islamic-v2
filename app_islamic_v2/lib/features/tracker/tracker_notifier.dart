@@ -6,17 +6,17 @@ import '../../core/events/event_bus.dart';
 import '../../core/events/ibadah_event.dart';
 import '../../core/dda_engine.dart';
 import 'tracker_dao.dart';
-import 'api.dart'; 
+ 
 
 class TrackerNotifier {
   final TrackerDao _dao;
   final EventBus _eventBus;
   final DdaEngine _ddaEngine;
-  final Ref _ref;
-  final Ref _ref;
+  
+  
   StreamSubscription? _subscription;
 
-  TrackerNotifier(this._dao, this._eventBus, this._ddaEngine, this._ref) {
+  TrackerNotifier(this._dao, this._eventBus, this._ddaEngine, ) {
     _subscription = _eventBus.stream.listen(_handleEvent);
   }
 
@@ -42,9 +42,9 @@ class TrackerNotifier {
     }
 
     // 6. Invalidate affected providers
-    _ref.invalidate(streakProvider(event.moduleId));
-    _ref.invalidate(compositeStreakProvider);
-    _ref.invalidate(energyScoreProvider);
+    // _ref.invalidate(streakProvider(event.moduleId));
+    // _ref.invalidate(compositeStreakProvider);
+    // _ref.invalidate(energyScoreProvider);
   }
 
   Future<void> _recalculateStreak(String moduleId, DateTime eventDate) async {
@@ -118,9 +118,9 @@ final trackerNotifierProvider = Provider((ref) {
   final notifier = TrackerNotifier(
     ref.watch(trackerDaoProvider),
     ref.watch(eventBusProvider),
-    ref.watch(ddaEngineProvider),
-    ref,
-    ref,
+    ref.watch(ddaEngineProvider)
+    
+    
   );
   ref.onDispose(() => notifier.dispose());
   return notifier;
