@@ -1,0 +1,19 @@
+{
+  "@@locale": "id",
+  "appTitle": "DokterKonser Islamic V2",
+  "greeting": "Assalamu'alaikum",
+  "loadingPrayerTimes": "Memuat Jadwal Shalat...",
+  "markCompleted": "Tandai Selesai",
+  "energyBarLabel": "Energi Ibadah",
+  "questMapTitle": "Peta Perjalanan",
+  "streakLabel": "Hari Berturut-turut",
+  "jamRawanTitle": "Jam Rawan Lengah",
+  "pauseForMercyLabel": "Jeda untuk Kebaikan",
+  "errorLocationUnavailable": "Lokasi tidak tersedia",
+  "errorDataCorrupt": "Data rusak",
+  "salat": "Shalat",
+  "quran": "Al-Qur'an",
+  "mentor": "Mentor AI",
+  "stats": "Statistik",
+  "journey": "Perjalanan"
+}
