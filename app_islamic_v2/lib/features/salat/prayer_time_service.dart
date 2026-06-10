@@ -1,5 +1,5 @@
 import 'package:adhan/adhan.dart';
-import 'package:intl/intl.dart';
+
 
 class LatLng {
   final double latitude;

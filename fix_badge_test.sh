@@ -1,0 +1,1 @@
+rm app_islamic_v2/test/features/gamification/badge_awarded_animation_test.dart

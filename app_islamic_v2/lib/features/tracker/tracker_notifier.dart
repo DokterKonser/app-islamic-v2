@@ -13,6 +13,7 @@ class TrackerNotifier {
   final EventBus _eventBus;
   final DdaEngine _ddaEngine;
   final Ref _ref;
+  final Ref _ref;
   StreamSubscription? _subscription;
 
   TrackerNotifier(this._dao, this._eventBus, this._ddaEngine, this._ref) {
@@ -41,9 +42,9 @@ class TrackerNotifier {
     }
 
     // 6. Invalidate affected providers
-    // _ref.invalidate(streakProvider(event.moduleId));
-    // _ref.invalidate(compositeStreakProvider);
-    // _ref.invalidate(energyScoreProvider);
+    _ref.invalidate(streakProvider(event.moduleId));
+    _ref.invalidate(compositeStreakProvider);
+    _ref.invalidate(energyScoreProvider);
   }
 
   Future<void> _recalculateStreak(String moduleId, DateTime eventDate) async {
@@ -118,6 +119,7 @@ final trackerNotifierProvider = Provider((ref) {
     ref.watch(trackerDaoProvider),
     ref.watch(eventBusProvider),
     ref.watch(ddaEngineProvider),
+    ref,
     ref,
   );
   ref.onDispose(() => notifier.dispose());

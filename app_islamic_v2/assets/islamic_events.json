@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ramadan_start",
+    "name": "1 Ramadan",
+    "hijriMonth": 9,
+    "hijriDay": 1,
+    "isRecurring": true
+  },
+  {
+    "id": "eid_fitr",
+    "name": "Idul Fitri",
+    "hijriMonth": 10,
+    "hijriDay": 1,
+    "isRecurring": true
+  },
+  {
+    "id": "eid_adha",
+    "name": "Idul Adha",
+    "hijriMonth": 12,
+    "hijriDay": 10,
+    "isRecurring": true
+  },
+  {
+    "id": "arafah",
+    "name": "Hari Arafah",
+    "hijriMonth": 12,
+    "hijriDay": 9,
+    "isRecurring": true
+  },
+  {
+    "id": "ashura",
+    "name": "Hari Asyura",
+    "hijriMonth": 1,
+    "hijriDay": 10,
+    "isRecurring": true
+  }
+]
