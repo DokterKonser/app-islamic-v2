@@ -19,14 +19,16 @@ class MigrationV1 {
     await db.execute('''
       CREATE TABLE salat_records (
         id TEXT PRIMARY KEY,
-        salat_name TEXT NOT NULL,
-        status TEXT NOT NULL,
-        timestamp TEXT NOT NULL,
-        location TEXT
+        date TEXT NOT NULL,
+        prayer_name TEXT NOT NULL,
+        scheduled_at TEXT NOT NULL,
+        completed_at TEXT,
+        was_on_time INTEGER,
+        UNIQUE(date, prayer_name)
       )
     ''');
-    await db.execute('CREATE INDEX idx_salat_records_status ON salat_records(status)');
-    await db.execute('CREATE INDEX idx_salat_records_timestamp ON salat_records(timestamp)');
+    await db.execute('CREATE INDEX idx_salat_records_date ON salat_records(date)');
+    await db.execute('CREATE INDEX idx_salat_records_prayer ON salat_records(prayer_name)');
 
     // quran_bookmarks
     await db.execute('''
