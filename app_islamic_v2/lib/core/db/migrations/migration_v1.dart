@@ -37,7 +37,8 @@ class MigrationV1 {
         surah_id INTEGER NOT NULL,
         ayah_id INTEGER NOT NULL,
         timestamp TEXT NOT NULL,
-        note TEXT
+        note TEXT,
+        is_last_read INTEGER DEFAULT 0
       )
     ''');
 
