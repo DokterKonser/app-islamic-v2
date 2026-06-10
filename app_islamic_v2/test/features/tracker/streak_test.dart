@@ -1,3 +1,11 @@
+import 'package:uuid/uuid.dart';
+
+
+
+
+
+
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -5,7 +13,7 @@ import 'package:app_islamic_v2/core/events/event_bus.dart';
 import 'package:app_islamic_v2/core/events/ibadah_event.dart';
 import 'package:app_islamic_v2/features/tracker/tracker_dao.dart';
 import 'package:app_islamic_v2/features/tracker/tracker_notifier.dart';
-import 'package:uuid/uuid.dart';
+
 import 'dart:io';
 
 void main() {
@@ -29,12 +37,12 @@ void main() {
 
     final prayers = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
     final now = DateTime.now().toUtc();
-    final uuid = Uuid();
+     
 
     for (int i=0; i<prayers.length; i++) {
       final prayer = prayers[i];
-      final event = IbadahEvent(
-        id: uuid.v4(),
+      final event = IbadahEvent(id: Uuid().v4(),
+         
         moduleId: 'M01',
         eventType: IbadahEventType.salatCompleted,
         timestamp: now.add(Duration(minutes: i)),
@@ -67,12 +75,12 @@ void main() {
 
     final prayers = ['fajr2', 'dhuhr2', 'asr2', 'maghrib2', 'isha2'];
     final now = DateTime.now().toUtc();
-    final uuid = Uuid();
+     
 
     for (int i=0; i<prayers.length; i++) {
       final prayer = prayers[i];
-      final event = IbadahEvent(
-        id: uuid.v4(),
+      final event = IbadahEvent(id: Uuid().v4(),
+         
         moduleId: 'M01_test2',
         eventType: IbadahEventType.salatCompleted,
         timestamp: now.add(Duration(minutes: i)),
@@ -88,9 +96,9 @@ void main() {
 
   test('ibadah_events DELETE/UPDATE attempt throws AssertionError', () async {
     final dao = TrackerDao();
-    final uuid = Uuid();
-    final event = IbadahEvent(
-      id: uuid.v4(),
+     
+    final event = IbadahEvent(id: Uuid().v4(),
+       
       moduleId: 'M01',
       eventType: IbadahEventType.salatCompleted,
     );
